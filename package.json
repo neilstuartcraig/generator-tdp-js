@@ -24,7 +24,7 @@
   },
   "homepage": "https://github.com/neilstuartcraig/generator-tdp-js#readme",
   "dependencies": {
-    "yeoman-generator": "^2.0.5"
+    "yeoman-generator": "^3.2.0"
   },
   "files": [
     "generators"
