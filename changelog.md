@@ -1,5 +1,8 @@
 # generator-tdp-js changelog
 
+## v1.7.1
+* Fix: exec error WRT extends
+
 ## v1.7.0
 * Updates to modernise this, inc. moving to `babel-preset-env`, updating dependencies and defaults
 * License changed to Apache-2.0
