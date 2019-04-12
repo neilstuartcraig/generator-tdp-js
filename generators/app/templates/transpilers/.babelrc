@@ -1,12 +1,20 @@
 {
   "presets":
   [
-      "es2015-node6"
+    [
+      "env",
+      {
+        "targets":
+        {
+          "node": "current"
+        }
+      }
+    ]
   ],
   "plugins":
   [
-      "typecheck",
-      "syntax-flow",
-      "transform-flow-strip-types"
+    "typecheck",
+    "syntax-flow",
+    "transform-flow-strip-types"
   ]
 }

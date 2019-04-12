@@ -14,17 +14,14 @@
     },
     "scripts": {
         "start": "node .",        
-        "vuln-scan": "./node_modules/.bin/snyk test",
+        "vuln-scan": "npm audit",
         "lint": "node_modules/.bin/eslint ./*.js lib/*.js test/*.js",
         "test": "node_modules/.bin/nyc node_modules/.bin/ava test/*.js",
         "create-report": "./node_modules/.bin/nyc report --reporter=lcov --reporter=html",
         "show-report": "open coverage/index.html",
         "report": "npm run create-report && npm run show-report",
         "build": "./node_modules/babel-cli/bin/babel.js src/ --out-dir dist",
-        "post-install": "./scripts/post-install.js",
-        "preversion": "npm run build && npm test && npm run create-report",
-        "version": "npm run vuln-scan && git add -A",
-        "postversion": "git push --follow-tags && npm publish"
+        "post-install": "./scripts/post-install.js"
     },
     "repository": {
         "type": "git",
@@ -32,7 +29,7 @@
     },
     "keywords": [
     ],
-    "author": "<%= GTNOpts.user.name %> <%= GTNOpts.user.email %>",
+    "author": "<%= GTNOpts.user.name %> <<%= GTNOpts.user.email %>>",
     "license": "<%= GTNOpts.license %>",
     "bugs": {
         "url": "https://github.com/<%= GTNOpts.user.GHUsername %>/<%= GTNOpts.appName %>/issues"

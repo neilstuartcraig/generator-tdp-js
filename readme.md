@@ -31,7 +31,7 @@ This generator will make some major assumptions (which work for me):
 There are a few options you can opt in/out from when generating your :
 
 * `--description "<String: null>"`: a description to use in the `package.json` file
-* `--license "<String" MIT>"`: a license to use, 
+* `--license "<String" Apache-2.0>"`: a license to use, 
 * `--react <Boolean: false>`: whether you want to install [React](https://facebook.github.io/react/) and [React-DOM](https://www.npmjs.com/package/react-dom) (for e.g. server-side rendering) along with the [React ESLint plugin](https://www.npmjs.com/package/eslint-plugin-react)
 * `--version <SemVer: 1.0.0>`: the version number you want to start at
 
@@ -43,7 +43,7 @@ Then it will configure/install the following, customised to use the containing d
 * `.travis.yml` [Travis CI test configuration](https://docs.travis-ci.com/user/customizing-the-build)
 * `changelog.md`: a simple changelog markdown file
 * `config`: a directory containing a template config file
-* `license.md` file, as per the above `yo` option (current options are limited to "AFL-*", "GPL-2.0", "GPL-3.0", "ISC", "MIT", "MPL-2.0")
+* `license.md` file, as per the above `yo` option
 * `package.json`: [NPM package.json](https://docs.npmjs.com/files/package.json) file with correct package name and scripts:
     * A postinstall script which is set up to copy the (source-controlled) template config file to a (source-control-ignored) working config file - this helps avoid adding real config files (which probably contain sensitive info) to source-control
     * `npm start`: start your new application
@@ -53,7 +53,6 @@ Then it will configure/install the following, customised to use the containing d
     * `npm test`: run unit tests, via [AVA](https://github.com/avajs/ava). This also creates a [code coverage](https://en.wikipedia.org/wiki/Code_coverage) report using [nyc](https://github.com/istanbuljs/nyc) (see below)
         * `yo tdp-js:tests`: create unit test files for exported library functions (run `yo tdp-js:tests --help` to show options)
         * `npm run report`: show the created code coverage report
-    * `npm version (major|minor|patch)`: a very simple "version bump" flow which runs `npm run vuln-scan` then uses [npm version](https://docs.npmjs.com/cli/version) to bump the `package.json` version number then `git add -A`, followed by `git commit` and `git push --follow-tags` then `npm publish`
 * `readme.md` file for Github (primarily)
 * `script` directory, containing the postinstall script 
 * `src` directory which contains an `index.js` file and a `lib/<project name>-lib.js` library file which is `import`'d in the `index.js` file 

@@ -4,10 +4,6 @@
 Super simple Yeoman generator to set up a JS/Node NPM package
 */
 
-// Core deps
-const fs = require("fs");
-
-// Yeoman deps
 const generators = require("yeoman-generator");
 
 module.exports = generators.Base.extend(
@@ -84,7 +80,7 @@ TODO: split this up into a less horrendous chunk of crap
         // License
         // TODO: move this to config
         // NOTE: this is the full list of current (July 2016), OSI approved SPDX licenses from https://spdx.org/licenses/. Commented license are not yet added to templates/licenses
-        const validLicenses =
+        const supportedLicenses =
         [
             // "0BSD",
             // "AAL",
@@ -95,7 +91,7 @@ TODO: split this up into a less horrendous chunk of crap
             "AFL-3.0",
             // "AGPL-3.0",
             // "Apache-1.1",
-            // "Apache-2.0",
+            "Apache-2.0",
             // "APL-1.0",
             // "APSL-1.0",
             // "APSL-1.1",
@@ -190,20 +186,20 @@ TODO: split this up into a less horrendous chunk of crap
         // TODO: Add an opt for license - default to MIT, git.name() ?
         this.option("license",
         {
-            desc: "Specify the software license to include in package.json and the license.md file. Valid license are: " + validLicenses.toString("utf8"),
+            desc: "Specify the software license to include in package.json and the license.md file. Supported license are: " + supportedLicenses.toString("utf8"),
             type: String,
             alias: "l",
             optional: true,
-            defaults: "MIT"
+            defaults: "Apache-2.0"
         });
 
-        if(validLicenses.indexOf(this.options.license) >= 0)
+        if(supportedLicenses.indexOf(this.options.license) >= 0)
         {
             this.GTNOpts.license = this.options.license;
         }
         else
         {
-            console.error("Please specify a supported license type, one of: " + validLicenses.toString("utf8"));
+            console.error("Please specify a supported license type, one of: " + supportedLicenses.toString("utf8"));
             process.exit(1);
         }
 
@@ -261,14 +257,14 @@ TODO: split this up into a less horrendous chunk of crap
         [
             "ava",
             "nyc",
-            "snyk",
             "eslint-config-tdp",
             "babel-cli",
             "babel-eslint",
-            "babel-preset-es2015-node6",
+            "babel-preset-env",
             "babel-plugin-syntax-flow",
             "babel-plugin-transform-flow-strip-types",
-            "babel-plugin-typecheck"
+            "babel-plugin-typecheck",
+            "git-off-my-land"
         ];
 
         // React options

@@ -1,5 +1,5 @@
-node_modules
-.nyc_output
+node_modules/
+.nyc_output/
 npm-debug.log
-coverage
+coverage/
 config/<%= GTNOpts.appConfigFilename %>

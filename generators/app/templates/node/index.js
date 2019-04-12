@@ -1,12 +1,9 @@
 "use strict";
 
-// TODO: have a specific var for the lib filename and use that for consistency
-const config = require("../config/<%= GTNOpts.appConfigFilename %>"); // NOTE: Path is relative to build dir (dist/)
-const lib = require("./lib/<%= GTNOpts.appLibFilename %>"); // NOTE: Path is relative to build dir (dist/) - local because lib is babel'd
+import * as config from "../config/<%= GTNOpts.appConfigFilename %>"; // NOTE: Path is relative to build dir (dist/)
+import {test1} from "./lib/<%= GTNOpts.appLibFilename %>"; // NOTE: Path is relative to build dir (dist/) - local because lib is babel'd
 
-// TODO: config, likely deps, etc...
 
-//...simple tests
-let arg = config.testArg;
-let ret = lib.test1(arg);
-console.log("Hello! test('" + arg + "') returns " + ret);
+const arg1: string = config.testArg;
+const ret: string = test1(arg);
+console.log(`Hello! test1("${arg1}") returns "${ret}"`);

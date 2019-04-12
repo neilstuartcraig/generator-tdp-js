@@ -1,4 +1,4 @@
 # <%= GTNOpts.appName %> changelog
 
 ## v1.0.0
-Initial version
+* Initial version

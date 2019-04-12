@@ -1,17 +1,11 @@
 "use strict";
 
-function test1(arg1, arg2)
+function test1(arg1: number | string, arg2: number | string = "Badger")
 {
-    return arg;
-}
-
-function test2(arg2_1, arg2_2)
-{
-    return arg2_1;
+    return `Arg 1 is ${arg1}, arg 2 is ${arg2}`;
 }
 
 module.exports =
 {
-    test1: test1,
-    test2: test2
+    test1: test1
 };

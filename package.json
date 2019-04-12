@@ -1,6 +1,6 @@
 {
   "name": "generator-tdp-js",
-  "version": "1.6.4",
+  "version": "1.7.0",
   "description": "A simple Yeoman generator for my JS projects",
   "main": "index.js",
   "scripts": {
@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/neilstuartcraig/generator-tdp-js.git"
+    "url": "https://github.com/neilstuartcraig/generator-tdp-js"
   },
   "keywords": [
     "Yeoman",
@@ -18,7 +18,7 @@
     "Babel"
   ],
   "author": "Neil Craig <neil.craig@thedotproduct.org>",
-  "license": "MIT",
+  "license": "Apache-2.0",
   "bugs": {
     "url": "https://github.com/neilstuartcraig/generator-tdp-js/issues"
   },

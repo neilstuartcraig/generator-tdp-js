@@ -1,5 +1,9 @@
 # generator-tdp-js changelog
 
+## v1.7.0
+* Updates to modernise this, inc. moving to `babel-preset-env`, updating dependencies and defaults
+* License changed to Apache-2.0
+
 ## v1.6.3
 * Fix: const instead of let in test files
 * Fix: test arg data type checks - use proper ava syntax
